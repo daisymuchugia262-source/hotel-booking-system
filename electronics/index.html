@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PinkVolt — Your everyday tech store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="announcement">Free delivery in Nairobi on orders over KSh 10,000 <span>✦</span> Trusted tech, beautifully simple</div>
+  <header>
+    <a class="brand" href="#home" aria-label="PinkVolt home"><span class="bolt">ϟ</span> PINKVOLT</a>
+    <nav><a href="#shop">Shop</a><a href="#why-us">Why PinkVolt</a><a href="#contact">Contact</a><a href="account.html">Account &amp; owner</a></nav>
+    <div class="header-actions">
+      <button class="text-button" id="loginButton">Log in</button>
+      <button class="cart-toggle" id="cartToggle" aria-label="Open cart">Bag <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main id="storefront">
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">ELECTRONICS, ELEVATED</p>
+        <h1>Bring home the<br><em>good</em> stuff.</h1>
+        <p class="hero-text">All the tech you need, from everyday essentials to your next big upgrade. Carefully selected, fairly priced.</p>
+        <a href="#shop" class="primary-button">Explore the collection <span>→</span></a>
+        <div class="hero-stats"><div><strong>10k+</strong><span>happy customers</span></div><div><strong>1 year</strong><span>warranty included</span></div></div>
+      </div>
+      <div class="hero-art" aria-label="Modern electronics collection">
+        <div class="pink-orb orb-one"></div><div class="pink-orb orb-two"></div>
+        <div class="phone"><div class="phone-camera"></div><div class="phone-screen"><span>9:41</span><b>hello<br>there.</b><i>✦</i></div></div>
+        <div class="headphones"><div class="band"></div><div class="ear left"></div><div class="ear right"></div></div>
+        <div class="tag">NEW<br><b>IN</b></div>
+      </div>
+    </section>
+
+    <section id="shop" class="shop-section">
+      <div class="section-heading"><div><p class="eyebrow">SHOP THE EDIT</p><h2>Everything electronic.</h2></div><div class="filters" role="group" aria-label="Product filters"><button class="filter active" data-category="All">All</button><button class="filter" data-category="Phones">Phones</button><button class="filter" data-category="Audio">Audio</button><button class="filter" data-category="Computing">Computing</button><button class="filter" data-category="Home">Home</button><button class="filter" data-category="Accessories">Accessories</button></div></div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section id="why-us" class="benefits"><div><span>◌</span><h3>Quality checked</h3><p>Every item is inspected before it reaches you.</p></div><div><span>⌁</span><h3>Fast delivery</h3><p>Quick, careful delivery anywhere in Kenya.</p></div><div><span>♡</span><h3>Here to help</h3><p>Friendly support whenever you need it.</p></div></section>
+    <section id="contact" class="contact"><div><p class="eyebrow">NEED A HAND?</p><h2>Let’s find your perfect tech.</h2></div><a href="tel:0716273699">Call us <strong>0716 273 699</strong> <span>→</span></a></section>
+  </main>
+
+  <footer><a class="brand" href="#home"><span class="bolt">ϟ</span> PINKVOLT</a><p>Made for your everyday moments.</p><p>© 2026 PinkVolt Electronics</p></footer>
+
+  <aside class="cart-panel" id="cartPanel" aria-label="Shopping bag">
+    <div class="cart-head"><div><p class="eyebrow">YOUR SELECTION</p><h2>Your bag</h2></div><button class="close" id="closeCart" aria-label="Close cart">×</button></div>
+    <div id="cartItems" class="cart-items"><div class="empty-cart"><span>♡</span><h3>Your bag is waiting.</h3><p>Add something lovely from the shop.</p></div></div>
+    <div class="cart-footer"><div class="total"><span>Subtotal</span><strong id="cartTotal">KSh 0</strong></div><button class="checkout" id="checkoutButton">Confirm order &amp; pay <span>→</span></button><small>Secure checkout · M-Pesa, card &amp; cash on delivery</small></div>
+  </aside><div class="overlay" id="overlay"></div>
+
+  <div class="auth-modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <button class="close auth-close" id="authClose" aria-label="Close">×</button><div class="auth-icon">ϟ</div><p class="eyebrow">WELCOME TO PINKVOLT</p><h2 id="authTitle">Your tech journey<br>starts here.</h2><p>Sign up with your email to browse our complete collection and place orders.</p>
+    <form id="authForm"><label for="email">Email address</label><input type="email" id="email" placeholder="you@example.com" required><label for="name">Your name</label><input type="text" id="name" placeholder="What should we call you?" required><label for="phone">Phone number</label><input type="tel" id="phone" placeholder="07xx xxx xxx" required><label for="password">Password</label><input type="password" id="password" minlength="6" autocomplete="current-password" placeholder="At least 6 characters" required><button class="primary-button" type="submit">Create my account <span>→</span></button></form>
+    <p class="switch-copy">Already have an account? <button id="switchLogin" type="button">Log in</button></p>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
